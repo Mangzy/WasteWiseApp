@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">WasteWise</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="more_menu">More Menu</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="log_out">Log Out</string>
+
+    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="name">Nama</string>
+    <string name="name_hint">Masukkan Nama Anda</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Masukkan Email Anda</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Masukkan Password Anda</string>
+    <string name="message_login_page">Silahkan Login Terlebih dahulu</string>
+    <string name="title_login_page">Login</string>
+    <string name="title_activity_bottom_navigation_view">BottomNavigationView</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_booklet">Booklet</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="home_page">Ini halaman Home</string>
+    <string name="camera_page">Ini halaman Camera</string>
+    <string name="booklet_page">Ini halaman Booklet</string>
+    <string name="profile_page">Ini halaman Profile</string>
+</resources>
