@@ -1,5 +1,8 @@
 package com.example.wastewise.data.remote.network
 
+import com.example.wastewise.data.remote.response.article.ArticlesResponse
+import com.example.wastewise.data.remote.response.booklet.BookletResponse
+import com.example.wastewise.data.remote.response.detail_article.DetailArticleResponsee
 import com.example.wastewise.data.remote.response.login.ForgotPasswordResponse
 import com.example.wastewise.data.remote.response.login.LoginResponse
 import com.example.wastewise.data.remote.response.login.RefreshTokenResponse
@@ -15,6 +18,8 @@ import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 data class SignUpRequest(
@@ -70,5 +75,19 @@ interface ApiService {
     suspend fun updateProfilePicture(
         @Part profilePicture: MultipartBody.Part
     ): UpdateImageProfileResponse
+
+    @GET("article/page/{pageNumber}")
+    suspend fun getArticle(
+        @Path("pageNumber") pageNumber: Int = 1,
+    ): ArticlesResponse
+
+    @GET("article/details/{articleId}")
+    suspend fun getArticleDetails(
+        @Path("articleId") articleId: String
+    ): DetailArticleResponsee
+
+    @GET("waste/all")
+    suspend fun getWaste() : BookletResponse
+
 
 }

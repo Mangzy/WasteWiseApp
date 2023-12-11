@@ -25,4 +25,10 @@
     <string name="camera_page">Ini halaman Camera</string>
     <string name="booklet_page">Ini halaman Booklet</string>
     <string name="profile_page">Ini halaman Profile</string>
+
+
+    <string name="search_hint">Search Artikel</string>
+
+    <string name="retry">Retry</string>
+    <string name="data_not_loaded">Data not loaded</string>
 </resources>

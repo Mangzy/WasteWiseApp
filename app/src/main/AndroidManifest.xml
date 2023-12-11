@@ -6,10 +6,14 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -23,11 +27,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".BottomNavigationView"
-            android:exported="false"
-            android:label="@string/title_activity_bottom_navigation_view" />
+            android:name=".ui.detail_booklet.DetailBookletActivity"
+            android:exported="false" />
         <activity
-            android:name=".ui.navigation.BottomNavigationView"
+            android:name=".ui.detail__article.DetailArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomNavigationView"
             android:exported="false"
             android:label="@string/title_activity_bottom_navigation_view" />
         <activity

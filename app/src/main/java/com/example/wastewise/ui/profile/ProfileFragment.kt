@@ -53,6 +53,7 @@ class ProfileFragment : Fragment() {
             if (it != null) {
                 when(it) {
                     is Result.Success -> {
+                        showLoading(false)
                         Log.d("ProfileFragment", "onCreateView: ${it.data.data.photoURL}")
                         if(it.data.data.photoURL != null) {
                             Glide.with(requireContext())
@@ -64,6 +65,7 @@ class ProfileFragment : Fragment() {
                         binding.textEmail.setText(it.data.data.email)
                     }
                     is Result.Loading -> {
+                        showLoading(true)
                     }
                     is Result.Error -> {
                         Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
@@ -72,19 +74,17 @@ class ProfileFragment : Fragment() {
             }
         })
 
-        binding.changePicture.setOnClickListener {
-
-        }
-
         binding.buttonSave.setOnClickListener {
             val username = binding.editUsername.text.toString()
             profileViewModel.updateProfile(username).observe(viewLifecycleOwner, {
                 if (it != null) {
                     when(it) {
                         is Result.Success -> {
+                            showLoading(false)
                             processSave(it.data)
                         }
                         is Result.Loading -> {
+                            showLoading(true)
                         }
                         is Result.Error -> {
                             Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
@@ -126,6 +126,10 @@ class ProfileFragment : Fragment() {
             }
         }
         builder.show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressIndicatorProfil.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     private fun startGallery() {
@@ -176,9 +180,11 @@ class ProfileFragment : Fragment() {
             if (it != null) {
                 when(it) {
                     is Result.Success -> {
+                        showLoading(false)
                         Toast.makeText(requireContext(), "Upload Success", Toast.LENGTH_LONG).show()
                     }
                     is Result.Loading -> {
+                        showLoading(true)
                     }
                     is Result.Error -> {
 //                        print di logcat erronya
